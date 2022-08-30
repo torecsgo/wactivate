@@ -1,0 +1,55 @@
+{
+  "name": "wactivate",
+  "version": "1.0.0",
+  "description": "Windows Activate Tool",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Tore <torecsgo@gmail.com>",
+  "license": "MIT",
+  "build": {
+    "appId": "wactivate",
+    "asar": true,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^15.0.0",
+    "electron-builder": "^23.3.3",
+    "electron-packager": "^16.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "child_process": "^1.0.2",
+    "fs": "^0.0.1-security",
+    "node-powershell": "^4.0.0",
+    "regedit": "^5.0.0"
+  }
+}
