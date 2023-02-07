@@ -1,6 +1,6 @@
 {
   "name": "wactivate",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Windows Activate Tool",
   "main": "src/index.js",
   "scripts": {
@@ -41,15 +41,15 @@
     }
   },
   "devDependencies": {
-    "electron": "^15.0.0",
-    "electron-builder": "^23.3.3",
-    "electron-packager": "^16.0.0"
+    "electron": "^23.0.0",
+    "electron-builder": "^23.6.0",
+    "electron-packager": "^17.1.1"
   },
   "dependencies": {
-    "axios": "^0.21.4",
+    "axios": "^1.3.2",
     "child_process": "^1.0.2",
     "fs": "^0.0.1-security",
     "node-powershell": "^4.0.0",
-    "regedit": "^5.0.0"
+    "regedit": "^5.1.1"
   }
 }

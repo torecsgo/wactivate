@@ -5,6 +5,10 @@ $(function () {
         activate10Pro()
     })
 
+    $("#10ltsc").on("click", function () {
+        activate10Enterprise()
+    })
+
     $("#10home").on("click", function () {
         activate10Home()
     })
@@ -37,6 +41,21 @@ $(function () {
             noProfile: true
         })
         ps.addCommand(`slmgr /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99 ; slmgr /skms kms8.msguides.com ; slmgr /ato`);
+        ps.invoke().then(output => {
+            console.log(output);
+        }).catch(err => {
+            console.log(err);
+        });
+    }
+
+    function activate10Enterprise() {
+        const Shell = require('node-powershell');
+        const ps = new Shell({
+            executionPolicy: 'Bypass',
+            noProfile: true
+        })
+        //../../fix.cmd
+        ps.addCommand(`cd src/ltsc; dir; cmd.exe /c fix.cmd`);
         ps.invoke().then(output => {
             console.log(output);
         }).catch(err => {
